@@ -8,10 +8,8 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
-  isAuthenticated!: boolean;
-  userName?: string;
-  error?: Error;
+export class LoginComponent {
+  error?: any;
 
   constructor(
     @Inject(OKTA_AUTH) 
@@ -29,8 +27,4 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  async ngOnInit() {
-    this.isAuthenticated = await this.oktaAuth.isAuthenticated();
-    console.log(this.isAuthenticated, this.userName)
-  }
 }

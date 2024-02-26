@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import OktaAuth from '@okta/okta-auth-js';
+import loginConfig from '../okta-login/login.config';
 
 @Component({
   selector: 'app-loggedin',
@@ -9,6 +11,13 @@ import { Router } from '@angular/router';
 export class LoggedinComponent {
   constructor(private router: Router) {
 
+  }
+
+  oktaAuth = new OktaAuth(loginConfig.oidc)
+
+  logOut() {
+    localStorage.clear()
+    window.location.href = "https://dev-63114965.okta.com/login/signout"
   }
 
   redirectToClientPortal() {
