@@ -21,7 +21,7 @@ export class LoggedinComponent {
   }
 
   redirectToClientPortal() {
-    window.location.href = 'http://localhost:4200/auth/okta';
+    window.location.href = 'https://eruptrplatform-dev--okta-c1a1rznu.web.app/auth/okta';
   }
 
 }
